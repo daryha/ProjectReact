@@ -1,0 +1,146 @@
+
+.Header__container{
+    width: 1248px;
+    height: 62px;
+    display: flex;
+    margin-top: 48px;
+    margin-bottom: 155px;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+
+.Header__container::before{
+    content:'';
+    position: absolute;
+    height: 1px;
+    width:1246px;
+    background: #CBCBCB;
+    top:140%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.Header__title{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: #00BFFF;
+    position: absolute;
+    left: 80px;
+    cursor: pointer;
+    text-decoration: none;
+
+}
+
+
+.Header__list{
+    display: flex;
+    list-style: none;
+    
+    
+    
+}
+
+.Header__items{
+    margin: 0px 20px;
+}
+
+.Header__links{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+    text-decoration: none;
+    color: #606060;
+    position: relative;
+    
+
+}
+
+.Header__links::before{
+    content: '';
+    position: absolute;
+    height: 1px;
+    background: #00BFFF;
+    bottom: -40%;
+    width: 0;
+    transition: 0.5s;
+}
+
+.Header__links:hover::before{
+    width: 100%;
+}
+
+
+
+.sing__up{
+    padding: 18px 27px 18px 27px;
+    border-radius: 18px;
+    border: 0;
+    background: #00BFFF;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+    cursor: pointer;
+    transition: .5s;
+
+    
+}
+
+.sing__up:hover{
+    background: #000;
+    color: #00BFFF;
+}
+
+.login{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding: 18px 27px 18px 27px;
+    border: 0;
+    background: #fff;
+    cursor: pointer;
+    color: #606060;
+
+}
+
+
+.header__button-container{
+    width:359.89px;
+    height: 62.66px;
+}
+
+.UserName{
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+
+.LogIn__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.icon{
+    width: 35px;
+}

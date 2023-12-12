@@ -1,0 +1,43 @@
+.privacy-policy {
+  font-family: 'Arial', sans-serif;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+  background: #fff;
+  color: #333;
+  margin-bottom: 120px;
+}
+
+.privacy-policy h1 {
+  border-bottom: 2px solid #00BFFF;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.privacy-policy h2 {
+  color: #00BFFF;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.privacy-policy h3 {
+  color: #333;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.privacy-policy p {
+  line-height: 1.6;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+/* If you have a footer or header, you can add their styles here */
+footer, header {
+  background: #333;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+/* You can also add responsive design features */
+

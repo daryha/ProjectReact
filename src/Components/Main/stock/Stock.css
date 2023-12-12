@@ -1,0 +1,65 @@
+
+
+
+
+.title{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 51px;
+    font-weight: 700;
+    color: #00BFFF;
+    margin:20px;
+    margin-bottom: 40px;
+    position: relative;
+
+}
+
+
+
+.Stock__card{
+    width: 500px;
+    height: 440.59px;
+    border: 3.57px solid #EDF2F7;
+    border-radius: 25px;
+    box-shadow: 6.84841775894165px 82.18101501464844px 41.09050750732422px 1px #E5E5E5B2;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 53px;
+    transition: 1s;
+}
+
+
+
+.Stock__card:hover{
+    cursor: pointer;
+    margin-left: 50px;
+   
+}
+
+
+.Card__Desc{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 38px;
+    letter-spacing: 0.3141176700592041px;
+    text-align: left;
+    width: 450px;
+    height: 76px;
+    margin-top: 33px;
+    margin-left: 40px;
+}
+
+.Card__Desc span{
+    color: #00BFFF;
+}
+
+
+.StockImg{
+    display:inline-block;
+    width: 365px;
+    height: 263px;
+    margin-left:49px ;
+
+
+}

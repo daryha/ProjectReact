@@ -1,0 +1,71 @@
+.ShopCardContainer{
+    position: relative;
+    margin-bottom:222px ;
+}
+
+.ShopCardContainer::before{
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    width: 100%;
+    height: 1px;
+    background: #CBCBCB;
+   
+    
+}
+
+
+.Card__Wrapper {
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start; 
+  height: 500px;
+
+}
+
+
+
+
+.Shop__title   {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 70px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 64px;
+
+}
+
+.Vector__container{
+    position: absolute;
+    right: 0;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    cursor: pointer;
+   
+    
+   
+}
+
+.Vector__container:hover .Vector__img{
+    transform: translateX(10px);
+    transition: .6s;
+}
+
+.Vector__container p{
+    font-family: Poppins;
+    font-size: 20px;
+   
+    color: #ACADB9;
+
+}
+
+
+
+.Vector__img{
+    width: 17px;
+    height: 17px;
+    transition:  0.3s 
+}
+
+

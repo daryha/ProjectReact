@@ -1,0 +1,45 @@
+.big_shop_card{
+    margin: 0 auto;
+    width: 1237px;
+    height: 200px;
+    margin-bottom: 130px;
+}
+
+.big_shop_card:hover{
+    transform: rotate(000.1deg);
+    background: #EBEBED;
+}
+
+
+
+.big_shop_card_img{
+    width: 1238px;
+    height: 378px;
+}
+
+.Big_Shop__Card__info__container{
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding: 25px 40px;
+
+    
+}
+
+
+
+
+
+
+
+
+.Big__Shop__Card__info__img-favorites{
+    transform: translateX(1100px);
+    position: absolute;
+}
+
+.Raiting__card__container{
+    display: flex;
+    align-items: center;
+}
+

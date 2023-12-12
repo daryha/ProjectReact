@@ -1,0 +1,319 @@
+.Logo_reg{
+    margin: 30px 70px;
+}
+.Register__container{
+    width: 50%;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+
+    
+}
+
+
+
+.Register__window{
+    /* background: red; */
+    width: 474px;
+    height: 687px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+.Register__title{
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 44px;
+    letter-spacing: -0.04em;
+    text-align: center;
+    margin-bottom: 120px;
+}
+
+
+.Register__title span{
+    color: #00BFFF;
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.Register__or{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: 0.03em;
+    text-align: center;
+    color: #005A6459;
+
+}
+
+.Sing__to__google{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -250px);
+    padding: 10px 57px;
+    background: #F5F5F5;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .5s;
+}
+.Sing__to__google:hover{
+    background: #00BFFF;
+}
+
+.Container__input{
+    /* background: green; */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -100px);
+    height: 250px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.Input__wrapper {
+  position: relative;
+  
+  /* Другие стили для контейнера инпута */
+}
+
+
+.User__input,
+.Email__input,
+.Password__input {
+  width: 282.44px; 
+  height: 54.49px; 
+  border-radius: 14px;
+  border: 0;
+  padding: 0px 10px;
+  transition: .3s;
+  background: #F5F5F5;
+  font-size: 15px;
+  position: relative;
+  padding-left: 40px;
+  background-repeat: no-repeat;
+  background-position: 3%;
+  background-size: 19px;
+}
+
+.User__input{
+  background-image: url('./../../../Img/Register__icon/User-Icon.png');
+
+}
+
+.Email__input{
+  background-image: url('./../../../Img/Register__icon/Email-Icon.png');
+
+}
+
+.Password__input{
+  background-image: url('./../../../Img/Register__icon/password-Icon.png');
+   background-size: 17.5px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.User__input:placeholder-shown,
+.Email__input:placeholder-shown,
+.Password__input:placeholder-shown {
+
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 25px;
+    letter-spacing: 0.07em;
+    text-align: left;
+    color: #C2C3CB;
+}
+
+.User__input:focus::placeholder,
+.Email__input:focus::placeholder,
+.Password__input:focus::placeholder {
+  color: #fff; 
+}
+
+
+.User__input:focus,
+.Email__input:focus,
+.Password__input:focus {
+  width: 282.44px; 
+  height: 54.49px; 
+  background-size: cover;
+  border-radius: 14px;
+  border: 0;
+  padding: 0px 70px;
+  outline: none;
+  background: #00BFFF;
+  font-size: 15px;
+  color: #fff;
+  padding-left: 20px;
+  
+
+}
+
+.Password__toggle {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  border: 0;
+  background: none;
+}
+
+
+
+.sing__up__register{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 200px);
+    padding: 20px 99px;
+}
+
+.Frogot__password{
+    margin-top: 475px;
+    text-align: center;
+}
+
+.Frogot__password span{
+    color: #00BFFF;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.Politic{
+    margin: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #718096;
+}
+
+.LogIn{
+  position: absolute;
+  top: 330px;
+  padding: 17px 150px;
+}
+
+
+.Logo__window{
+    width: 50%;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    background: #148FB8;
+    display:flex;
+    flex-direction: column;
+
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 44px;
+  letter-spacing: 0em;
+  text-align: center;
+
+}
+
+
+
+.car__img{
+    margin: 220px 0px 20px 170px ;
+    width: 588px;
+    height: 424px;
+}
+
+.title__logo__window{
+  color: #FFFFFF;
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+.desc__logo__window{
+  color: #1A202C;
+}
+
+.desc__logo__window span{
+  color: #FFFFFF;
+}
+
+.Password__refresh{
+  position: absolute;
+  right: 10px;
+  top: 80px;
+  color: #00BFFF;
+}
+
+.Frgot{
+  position: absolute;
+  top: 230px;
+}
+
+.Frgot__title{
+  text-align: center;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 44px;
+  margin-top: 190px;
+
+
+}
+
+.Frgot__desc{
+  text-align: center;
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 28px;
+  color: #CFCFD3;
+}
+
+.error{
+  
+  color: red;
+  width: 320px;
+  height: 0px;
+  margin-bottom: 20px;
+  
+}
+
+.input-error{
+  width: 282.44px; 
+  height: 54.49px; 
+  background-size: cover;
+  border-radius: 14px;
+  border: 0;
+  padding: 0px 70px;
+  outline: none;
+  background: #ff0000;
+  font-size: 15px;
+  padding-left: 20px;
+}
+
+.input-error::placeholder{
+  color: #000;
+}
+
+.trans{
+  margin-top: 30px;
+}
+
+.UserName{
+    line-height: 20px;
+}
+

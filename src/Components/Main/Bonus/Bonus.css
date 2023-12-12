@@ -1,0 +1,117 @@
+.form-container{
+    margin-top: 25px;
+    background: #ffff;
+    width: 25%;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    
+}
+
+.input-style{
+    border:none; 
+    margin: 0;
+    
+}
+
+.button-style{
+    position: absolute;
+    transform: translate(33px,-15px);
+    padding: 15px 26px;
+    border: none;
+    border-radius: 10px;
+    background: #00BFFF;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.5s;
+
+    
+}
+
+.button-style:hover{
+    background: #000;
+    color: #00BFFF;
+}
+
+.input-style:focus{
+    border:none; 
+    outline: none;
+
+}
+
+
+.Bonus__container{
+    width: 1214px;
+    height: 280px;
+    background: #00BFFF;
+    margin-bottom: 200px;
+    border-radius: 35px;
+    padding: 20px 0px 0px 53px;
+    background: url(./../../../Img/BonusBak.png);
+    background-position:center;
+    background-color: #00BFFF;
+    position: relative;
+}
+
+.Bonus__container::before{
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    background-color: #fff;
+    top: 130px;
+    right: 170px;
+    background-image:url(./../../../Img/Coca.png);
+}
+
+
+.Bonus__title{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 70px;
+    font-weight: 800;
+    color: #ffff;
+}
+
+
+
+
+.Bonus__desc{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.Bonus__desc span{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 42px;
+    font-weight: bold;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: left;
+} 
+
+.Bonus__message {
+    position: absolute;
+
+    padding: 10px;
+    background-color: #d4edda; /* светло-зеленый фон */
+    border: 1px solid #c3e6cb;
+    color: #155724; /* темно-зеленый текст */
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+
+.notification.show{
+    background: #00BFFF;
+    text-align: center;
+    padding: 5px 50px;
+}
+
+

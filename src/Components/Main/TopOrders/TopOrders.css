@@ -1,0 +1,39 @@
+.Oreders__container{
+    margin-bottom: 300px;
+    position: relative;
+}
+
+.Oreders__container::before{
+    content: '';
+    position: absolute;
+    bottom: -200px;
+    width: 100%;
+    height: 1px;
+    background: #CBCBCB;
+
+}
+
+
+.Oreders__wrapper{
+    display: flex;
+    gap: 30px;
+}
+
+
+.Oreders__title{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 26px;
+    letter-spacing: 0px;
+    text-align: left;
+    margin-bottom: 150px;
+
+}
+
+.Oreders__title span{
+    color: #00BFFF;
+}
