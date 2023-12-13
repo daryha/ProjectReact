@@ -38,6 +38,7 @@ const Bonus = () => {
 			)
 			const data = await response.json()
 			if (response.ok) {
+				console.log(data)
 				showNotification(
 					'Ваш запрос на получение освежающей Coca-Cola был успешно обработан!'
 				)
@@ -46,9 +47,11 @@ const Bonus = () => {
 			}
 		} catch (error) {
 			setMessage('Ошибка сети: ' + error.message) // Установка сообщения о сетевой ошибке
+							
 		}
 	}
 
+	
 	return (
 		<>
 			<div className='Bonus__container'>

@@ -1,17 +1,10 @@
 import './Register.css'
 
-import Eyeimg from './../../../Img/Register__icon/iconmonstr-eye-thin.svg'
-import EyeimgOff from './../../../Img/Register__icon/iconmonstr-eye-off-thin.svg'
-
-import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
 
 const RegisterForgotPassword = () => {
-	const [isPasswordShown, setIsPasswordShown] = useState(false)
+	
 
-	const togglePasswordVisibility = () => {
-		setIsPasswordShown(!isPasswordShown)
-	}
+
 
 	return (
 		<>

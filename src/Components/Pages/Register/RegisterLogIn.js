@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from './AuthContext'
-import { GoogleLogin } from 'react-google-login'
 import GoogleLogo from './../../../Img/G.png'
 import Eyeimg from './../../../Img/Register__icon/iconmonstr-eye-thin.svg'
 import EyeimgOff from './../../../Img/Register__icon/iconmonstr-eye-off-thin.svg'
@@ -18,9 +17,6 @@ const RegisterLogIn = () => {
 	const [isPasswordShown, setIsPasswordShown] = useState(false)
 
 
-	const responseGoogle = response => {
-		console.log(response)
-	}
 
 	const togglePasswordVisibility = () => {
 		setIsPasswordShown(!isPasswordShown)
@@ -133,13 +129,6 @@ const RegisterLogIn = () => {
 			</h3>
 			<button className='Sing__to__google'>
 				<img src={GoogleLogo} alt='Google' />
-				<GoogleLogin
-					clientId='117619082455-f18b14g292ht5jsud9qm5bmr7ppl53hi.apps.googleusercontent.com' // Замените на ваш идентификатор клиента
-					buttonText='Login with Google'
-					onSuccess={responseGoogle}
-					onFailure={responseGoogle}
-					cookiePolicy={'single_host_origin'}
-				/>
 			</button>
 			<p className='Register__or'>ИЛИ</p>
 			<form onSubmit={handleLogin}>
