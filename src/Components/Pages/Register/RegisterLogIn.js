@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from './AuthContext'
+import { GoogleLogin } from 'react-google-login'
 import GoogleLogo from './../../../Img/G.png'
 import Eyeimg from './../../../Img/Register__icon/iconmonstr-eye-thin.svg'
 import EyeimgOff from './../../../Img/Register__icon/iconmonstr-eye-off-thin.svg'
@@ -15,7 +16,11 @@ const RegisterLogIn = () => {
 	const { login } = useAuth()
 	const navigate = useNavigate()
 	const [isPasswordShown, setIsPasswordShown] = useState(false)
-	
+
+
+	const responseGoogle = response => {
+		console.log(response)
+	}
 
 	const togglePasswordVisibility = () => {
 		setIsPasswordShown(!isPasswordShown)
@@ -82,7 +87,7 @@ const RegisterLogIn = () => {
 		try {
 		
 			const response = await axios.post(
-				'http://localhost:8000/api/accounts/login/',
+				'https://servertastypriority-ca7a9e5aec14.herokuapp.com/api/accounts/login/',
 				{
 					username: username,
 					password: password,
@@ -94,11 +99,14 @@ const RegisterLogIn = () => {
 				token: response.data.token,
 			})
 			axios
-				.get('http://localhost:8000/api/user/profile/', {
-					headers: {
-						Authorization: `Token ${localStorage.getItem('token')}`,
-					},
-				})
+				.get(
+					'https://servertastypriority-ca7a9e5aec14.herokuapp.com/api/user/profile/',
+					{
+						headers: {
+							Authorization: `Token ${localStorage.getItem('token')}`,
+						},
+					}
+				)
 				.then(response => {})
 				.catch(error => {
 					console.error('Ошибка доступа к защищенному маршруту', error)
@@ -125,6 +133,13 @@ const RegisterLogIn = () => {
 			</h3>
 			<button className='Sing__to__google'>
 				<img src={GoogleLogo} alt='Google' />
+				<GoogleLogin
+					clientId='117619082455-f18b14g292ht5jsud9qm5bmr7ppl53hi.apps.googleusercontent.com' // Замените на ваш идентификатор клиента
+					buttonText='Login with Google'
+					onSuccess={responseGoogle}
+					onFailure={responseGoogle}
+					cookiePolicy={'single_host_origin'}
+				/>
 			</button>
 			<p className='Register__or'>ИЛИ</p>
 			<form onSubmit={handleLogin}>
@@ -152,7 +167,9 @@ const RegisterLogIn = () => {
 						/>
 						{errors.password && <div className='error'>{errors.password}</div>}
 						<NavLink to={'/ForgotPassword'}>
-							<p className={`Password__refresh ${errors ? 'trans' : ''}`}>Забыли пароль?</p>
+							<p className={`Password__refresh ${errors ? 'trans' : ''}`}>
+								Забыли пароль?
+							</p>
 						</NavLink>
 						<button
 							type='button'

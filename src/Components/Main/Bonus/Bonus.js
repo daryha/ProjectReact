@@ -27,7 +27,7 @@ const Bonus = () => {
 		event.preventDefault()
 		try {
 			const response = await fetch(
-				'http://127.0.0.1:8000/email_app/send_email/',
+				'https://servertastypriority-ca7a9e5aec14.herokuapp.com/email_app/send_email/',
 				{
 					method: 'POST',
 					headers: {

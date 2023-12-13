@@ -80,7 +80,7 @@ const RegisterSingUp = () => {
 
 		try {
 			const response = await axios.post(
-				'http://localhost:8000/api/accounts/register/',
+				'https://servertastypriority-ca7a9e5aec14.herokuapp.com/api/accounts/register/',
 				{
 					username: userName,
 					email: email,
