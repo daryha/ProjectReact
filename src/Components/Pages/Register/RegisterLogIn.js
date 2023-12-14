@@ -57,7 +57,12 @@ const RegisterLogIn = () => {
 		}
 	}	
 
-
+	  const handleGoogleLoginSuccess = googleData => {
+			// Здесь вы можете обработать вход через Google
+			login(googleData)
+			localStorage.setItem('token', googleData.token)
+			navigate('/')
+		}
 
 
 
@@ -128,7 +133,7 @@ const RegisterLogIn = () => {
 			<h3 className='Register__title'>
 				Войти в <span>TastyPriority</span>
 			</h3>
-			<RegisterGoogle />
+			<RegisterGoogle onLoginSuccess={handleGoogleLoginSuccess} />
 			<p className='Register__or'>ИЛИ</p>
 			<form onSubmit={handleLogin}>
 				<div className='Container__input'>
