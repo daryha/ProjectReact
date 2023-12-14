@@ -2,11 +2,12 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from './AuthContext'
-import GoogleLogo from './../../../Img/G.png'
 import Eyeimg from './../../../Img/Register__icon/iconmonstr-eye-thin.svg'
 import EyeimgOff from './../../../Img/Register__icon/iconmonstr-eye-off-thin.svg'
 import './Register.css'
 import { NavLink } from 'react-router-dom'
+import RegisterGoogle from './RegisterGoogle'
+
 
 const RegisterLogIn = () => {
 	const [username, setUsername] = useState('') 
@@ -16,7 +17,7 @@ const RegisterLogIn = () => {
 	const navigate = useNavigate()
 	const [isPasswordShown, setIsPasswordShown] = useState(false)
 
-
+	
 
 	const togglePasswordVisibility = () => {
 		setIsPasswordShown(!isPasswordShown)
@@ -44,9 +45,6 @@ const RegisterLogIn = () => {
 		}
 	}	
 
-
-
-
 	const handlePasswordBlur = e => {
 		const passwordValue = e.target.value
 
@@ -57,7 +55,9 @@ const RegisterLogIn = () => {
 					'Пароль Должен содержать по крайней мере одно число, одну заглавную и строчную буквы, а также не менее 8 и более символов.',
 			}))
 		}
-	}
+	}	
+
+
 
 
 
@@ -89,6 +89,7 @@ const RegisterLogIn = () => {
 					password: password,
 				}
 			)
+			
 			
 			login({
 				username: username,
@@ -127,9 +128,7 @@ const RegisterLogIn = () => {
 			<h3 className='Register__title'>
 				Войти в <span>TastyPriority</span>
 			</h3>
-			<button className='Sing__to__google'>
-				<img src={GoogleLogo} alt='Google' />
-			</button>
+			<RegisterGoogle />
 			<p className='Register__or'>ИЛИ</p>
 			<form onSubmit={handleLogin}>
 				<div className='Container__input'>

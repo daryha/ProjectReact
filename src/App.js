@@ -25,6 +25,7 @@ import RestHardees from './Components/Pages/Shop/RestHardees/RestHardees';
 import Register from './Components/Pages/Register/Register';
 import LogIn from './Components/Pages/Register/LogIn';
 import ForgotPassword from './Components/Pages/Register/ForgotPassword';
+import { GoogleOAuthProvider } from '@react-oauth/google'
 
 function Layout({ children }) {
   const [showHeaderAndFooter, setShowHeaderAndFooter] = useState(true);
@@ -46,25 +47,27 @@ function Layout({ children }) {
 
 function App() {
   return (
-    <AuthProvider>
-      <div className='App'>
-        <Router>
-          <Routes>
-            <Route path='/' element={<Layout><Home /></Layout>} />
-            <Route path='/policy' element={<Layout><Policy /></Layout>} />
-            <Route path='/shopsmall' element={<Layout><ShopSmall /></Layout>} />
-            <Route path='/shopmagnum' element={<Layout><ShopMagnum /></Layout>} />
-            <Route path='/shopgalmart' element={<Layout><ShopGalmart /></Layout>} />
-            <Route path='/restkfc' element={<Layout><RestKFC /></Layout>} />
-            <Route path='/restbk' element={<Layout><RestBK /></Layout>} />
-            <Route path='/resthardees' element={<Layout><RestHardees /></Layout>} />
-            <Route path='/register' element={<Register />} />
-            <Route path='/login' element={<LogIn />} />
-            <Route path='/forgotpassword' element={<ForgotPassword />} />
-          </Routes>
-        </Router>
-      </div>
-    </AuthProvider>
+    <GoogleOAuthProvider clientId='117619082455-f18b14g292ht5jsud9qm5bmr7ppl53hi.apps.googleusercontent.com'>
+      <AuthProvider>
+        <div className='App'>
+          <Router>
+            <Routes>
+              <Route path='/' element={<Layout><Home /></Layout>} />
+              <Route path='/policy' element={<Layout><Policy /></Layout>} />
+              <Route path='/shopsmall' element={<Layout><ShopSmall /></Layout>} />
+              <Route path='/shopmagnum' element={<Layout><ShopMagnum /></Layout>} />
+              <Route path='/shopgalmart' element={<Layout><ShopGalmart /></Layout>} />
+              <Route path='/restkfc' element={<Layout><RestKFC /></Layout>} />
+              <Route path='/restbk' element={<Layout><RestBK /></Layout>} />
+              <Route path='/resthardees' element={<Layout><RestHardees /></Layout>} />
+              <Route path='/register' element={<Register />} />
+              <Route path='/login' element={<LogIn />} />
+              <Route path='/forgotpassword' element={<ForgotPassword />} />
+            </Routes>
+          </Router>
+        </div>
+      </AuthProvider>
+    </GoogleOAuthProvider>
   );
 }
 
