@@ -1,0 +1,93 @@
+/* Basket.css */
+
+.basket .checkout {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.basket .checkout-form,
+.basket .order-summary {
+  width: 48%;
+  position: relative;
+}
+
+.basket .order-summary::before{
+  content: '';
+  position: absolute;
+  height: 650px;
+  width: 1px;
+  background: #CBCBCB;
+  left: -20px;
+} 
+
+.basket h2 {
+  margin-bottom: 10px;
+}
+
+.basket input[type="text"],
+.basket input[type="email"],
+.basket input[type="tel"],
+.basket input[type="number"],
+.basket select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom:20px;
+  margin-top: 20x;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+
+}
+
+.basket input[type="text"]:focus,
+.basket input[type="email"]:focus,
+.basket input[type="tel"]:focus,
+.basket input[type="number"]:focus,
+.basket select:focus {
+  border-color: #00BFFF;
+  outline: none;
+  box-shadow: 0 0 5px rgba(13, 186, 255, 0.5);
+}
+
+.basket input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.basket button {
+  background-color: #00BFFF;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  margin-right: 30px;
+  margin-bottom: 20px;
+}
+
+.basket button:hover {
+  background-color: #00BFFF;
+}
+
+.basket h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.basket input::placeholder {
+  color: #aaa;
+
+}
+
+.basket .Shipping_address {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.input__Container{
+  display: flex;
+  gap: 20px ;
+}

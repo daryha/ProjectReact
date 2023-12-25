@@ -14,12 +14,9 @@ import Footer from './Components/Footer/Footer';
 // Pages
 import Home from './Components/Main/Home';
 import Policy from './Components/Pages/Policy/Policy';
-import ShopSmall from './Components/Pages/Shop/ShopSmall/ShopSmall';
-import ShopMagnum from './Components/Pages/Shop/ShopMagnum/ShopMagnum';
-import ShopGalmart from './Components/Pages/Shop/ShopGalmart/ShopGalmart';
-import RestKFC from './Components/Pages/Shop/RestKFC/RestKFC';
-import RestBK from './Components/Pages/Shop/RestBK/RestBK';
-import RestHardees from './Components/Pages/Shop/RestHardees/RestHardees';
+import MarketPage from './Components/Pages/Shop/ShopSmall/MarketPage'
+import AllShop from './Components/Main/ShopCard/AllShop';
+import CheckoutForm from './Components/Pages/Basket/Basket';
 
 // Register
 import Register from './Components/Pages/Register/Register';
@@ -47,28 +44,28 @@ function Layout({ children }) {
 
 function App() {
   return (
-    <GoogleOAuthProvider clientId='117619082455-f18b14g292ht5jsud9qm5bmr7ppl53hi.apps.googleusercontent.com'>
-      <AuthProvider>
-        <div className='App'>
-          <Router>
+		<GoogleOAuthProvider clientId='117619082455-f18b14g292ht5jsud9qm5bmr7ppl53hi.apps.googleusercontent.com'>
+			<AuthProvider>
+				<div className='App'>
+					<Router>
             <Routes>
+              <Route path="/shop/:slug" element={<MarketPage />} />
               <Route path='/' element={<Layout><Home /></Layout>} />
               <Route path='/policy' element={<Layout><Policy /></Layout>} />
-              <Route path='/shopsmall' element={<Layout><ShopSmall /></Layout>} />
-              <Route path='/shopmagnum' element={<Layout><ShopMagnum /></Layout>} />
-              <Route path='/shopgalmart' element={<Layout><ShopGalmart /></Layout>} />
-              <Route path='/restkfc' element={<Layout><RestKFC /></Layout>} />
-              <Route path='/restbk' element={<Layout><RestBK /></Layout>} />
-              <Route path='/resthardees' element={<Layout><RestHardees /></Layout>} />
+              <Route path="/stores/:slug" element={<Layout><MarketPage /></Layout>} />
               <Route path='/register' element={<Register />} />
               <Route path='/login' element={<LogIn />} />
               <Route path='/forgotpassword' element={<ForgotPassword />} />
+              <Route path='/AllShop' element={<Layout><AllShop /></Layout>} />
+              <Route path='/CheckoutForm' element={<Layout><CheckoutForm /></Layout>} />
             </Routes>
           </Router>
-        </div>
-      </AuthProvider>
-    </GoogleOAuthProvider>
-  );
+
+					
+				</div>
+			</AuthProvider>
+		</GoogleOAuthProvider>
+	)
 }
 
 export default App;

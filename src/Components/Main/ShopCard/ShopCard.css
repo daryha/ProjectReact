@@ -7,13 +7,13 @@
     padding: 20px 0px;
     box-shadow: 0.94564151763916px 150.34769439697266px 73.67384719848633px 0px #E5E5E5B2;
     transition: .5s;
+    margin-bottom: 100px;
 
     
 }
 
-.Shop__Card:hover{
-    transform: rotate(5deg);
-    background: #00BFFF;
+.Shop__Card:hover{  
+    transform: translateY(-20px);
 }
 
 .Shop__Card__Img{

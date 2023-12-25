@@ -86,42 +86,27 @@ const RegisterLogIn = () => {
 		}
 
 		try {
-		
+			// Попытка входа в систему
 			const response = await axios.post(
-				'https://servertastypriority-ca7a9e5aec14.herokuapp.com/api/accounts/login/',
+				'http://127.0.0.1:8000/api/accounts/login/',
 				{
 					username: username,
 					password: password,
 				}
 			)
-			
-			
-			login({
-				username: username,
-				token: response.data.token,
-			})
-			axios
-				.get(
-					'https://servertastypriority-ca7a9e5aec14.herokuapp.com/api/user/profile/',
-					{
-						headers: {
-							Authorization: `Token ${localStorage.getItem('token')}`,
-						},
-					}
-				)
-				.then(response => {})
-				.catch(error => {
-					console.error('Ошибка доступа к защищенному маршруту', error)
-				})
 
+			// Сохранение токена в localStorage
+			const token = response.data.token
+			localStorage.setItem('token', token)
 
-			
-			localStorage.setItem('token', response.data.token)
+			// Вызов функции login, предполагается, что она обновит состояние аутентификации в контексте
+			login({ username: username, token: token })
 
-			
+			// Перенаправление пользователя на домашнюю страницу
 			navigate('/')
 		} catch (error) {
-		
+			// Обработка ошибок, например, показ сообщения пользователю
+			console.error('Ошибка при входе:', error)
 			alert(
 				'Ошибка при входе: ' + (error.response && error.response.data.detail)
 			)
@@ -133,7 +118,7 @@ const RegisterLogIn = () => {
 			<h3 className='Register__title'>
 				Войти в <span>TastyPriority</span>
 			</h3>
-			<RegisterGoogle onLoginSuccess={handleGoogleLoginSuccess} />
+			<RegisterGoogle onLoginSuccess={handleGoogleLoginSuccess}  />
 			<p className='Register__or'>ИЛИ</p>
 			<form onSubmit={handleLogin}>
 				<div className='Container__input'>
