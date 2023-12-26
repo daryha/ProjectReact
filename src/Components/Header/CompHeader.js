@@ -1,6 +1,6 @@
 import './CompHeader.css'
 import { useAuth } from '../Pages/Register/AuthContext'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 import imgLogo from '../../Img/Logo.png'
 import BasketIcon from './../../Img/Basket-ico.png'
@@ -8,12 +8,14 @@ import FavoriteIcon from './../../Img/Favorite-ico.png'
 
 const CompHeader = () => {
 	
-	 const { user, logout } = useAuth()
+	const { user, logout } = useAuth()
+	const navigate = useNavigate()
 
-		const handleLogout = () => {
-			logout()
+    const handleLogout = () => {
+			logout() // Функция для обновления состояния аутентификации
+			localStorage.removeItem('token') // Удаление токена из localStorage
+			navigate('/')
 		}
-
 	  const userLoggedIn = (
 		
 			<div className='LogIn__container'>

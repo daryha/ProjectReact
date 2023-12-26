@@ -17,8 +17,8 @@ const ShopCardContainer = () => {
 	useEffect(() => {
 			const fetchShops = async () => {
 				try {
-					// Замените 'http://localhost:8000/api/stores/' на URL вашего API
-					const response = await axios.get('http://localhost:8000/api/stores/')
+					// Замените 'https://myserverapp-a354f8daf7d4.herokuapp.com/api/stores/' на URL вашего API
+					const response = await axios.get('https://myserverapp-a354f8daf7d4.herokuapp.com/api/stores/')
 					setShops(response.data)
 				} catch (error) {
 					console.error('Ошибка при получении данных о магазинах:', error)
