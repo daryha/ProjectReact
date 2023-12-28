@@ -52,18 +52,18 @@ const MarketPage = () => {
 		const fetchShopDetails = async () => {
 			try {
 				const storeResponse = await axios.get(
-					`https://myserverapp-a354f8daf7d4.herokuapp.com/api/stores/${slug}/`
+					`https://backendtasty-291f2f48a6f8.herokuapp.com/api/stores/${slug}/`
 				)
 				if (storeResponse.data) {
 					setShopDetails(storeResponse.data)
 
 					const categoriesResponse = await axios.get(
-						`https://myserverapp-a354f8daf7d4.herokuapp.com/api/category/?store_slug=${slug}`
+						`https://backendtasty-291f2f48a6f8.herokuapp.com/api/category/?store_slug=${slug}`
 					)
 					setCategories(categoriesResponse.data)
 
 					const productsResponse = await axios.get(
-						`https://myserverapp-a354f8daf7d4.herokuapp.com/api/products/?store_slug=${slug}`
+						`https://backendtasty-291f2f48a6f8.herokuapp.com/api/products/?store_slug=${slug}`
 					)
 					setProducts(productsResponse.data)
 				}
