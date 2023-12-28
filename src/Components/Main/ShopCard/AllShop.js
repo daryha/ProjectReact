@@ -11,7 +11,7 @@ const AllShop = () => {
 		const fetchShops = async () => {
 			try {
 				const response = await axios.get(
-					'https://myserverapp-a354f8daf7d4.herokuapp.com/api/stores/'
+					'https://backendtasty-291f2f48a6f8.herokuapp.com/api/stores/'
 				)
 				setShops(response.data)
 			} catch (error) {

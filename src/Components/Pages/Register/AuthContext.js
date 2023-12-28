@@ -22,7 +22,7 @@ export const AuthProvider = ({ children }) => {
 		if (token) {
 			try {
 				const response = await axios.get(
-					'https://myserverapp-a354f8daf7d4.herokuapp.com/api/user/profile/',
+					'https://backendtasty-291f2f48a6f8.herokuapp.com/api/user/profile/',
 					{
 						headers: {
 							Authorization: `Token ${token}`,

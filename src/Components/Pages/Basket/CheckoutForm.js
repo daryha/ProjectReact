@@ -20,7 +20,7 @@ const CheckoutForm = () => {
 		const token = localStorage.getItem('token')
 		try {
 			const response = await axios.get(
-				'https://myserverapp-a354f8daf7d4.herokuapp.com/api/cart/',
+				'https://backendtasty-291f2f48a6f8.herokuapp.com/api/cart/',
 				{
 					headers: {
 						Authorization: `Token ${token}`,
@@ -38,7 +38,7 @@ const CheckoutForm = () => {
 		const token = localStorage.getItem('token')
 		try {
 			const response = await axios.delete(
-				`https://myserverapp-a354f8daf7d4.herokuapp.com/api/cart/remove/${cartItemId}/`,
+				`https://backendtasty-291f2f48a6f8.herokuapp.com/api/cart/remove/${cartItemId}/`,
 				{
 					headers: {
 						Authorization: `Token ${token}`,
@@ -59,7 +59,7 @@ const CheckoutForm = () => {
 		const token = localStorage.getItem('token')
 		try {
 			await axios.delete(
-				`https://myserverapp-a354f8daf7d4.herokuapp.com/api/cart/remove/${cartItemId}/`,
+				`https://backendtasty-291f2f48a6f8.herokuapp.com/api/cart/remove/${cartItemId}/`,
 				{
 					headers: {
 						Authorization: `Token ${token}`,
@@ -123,7 +123,7 @@ const CheckoutForm = () => {
 		const token = localStorage.getItem('token')
 		try {
 			const response = await axios.post(
-				'https://myserverapp-a354f8daf7d4.herokuapp.com/api/create-order/',
+				'https://backendtasty-291f2f48a6f8.herokuapp.com/api/create-order/',
 				JSON.stringify(orderData), // Сериализуем объект данных в строку JSON
 				{
 					headers: {

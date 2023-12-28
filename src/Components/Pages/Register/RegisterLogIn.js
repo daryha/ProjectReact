@@ -88,7 +88,7 @@ const RegisterLogIn = () => {
 		try {
 			// Попытка входа в систему
 			const response = await axios.post(
-				'https://myserverapp-a354f8daf7d4.herokuapp.com/api/accounts/login/',
+				'https://backendtasty-291f2f48a6f8.herokuapp.com/api/accounts/login/',
 				{
 					username: username,
 					password: password,

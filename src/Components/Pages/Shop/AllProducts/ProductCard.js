@@ -44,7 +44,7 @@ const ProductCard = (products) => {
 				return
 			}
 			const response = await axios.get(
-				'https://myserverapp-a354f8daf7d4.herokuapp.com/api/user/profile/',
+				'https://backendtasty-291f2f48a6f8.herokuapp.com/api/user/profile/',
 				{
 					headers: {
 						Authorization: `Token ${token}`,
@@ -85,7 +85,7 @@ const ProductCard = (products) => {
 			if (!isAdded) {
 				// Добавление товара в корзину
 				response = await axios.post(
-					`https://myserverapp-a354f8daf7d4.herokuapp.com/api/cart/add/${id}/`,
+					`https://backendtasty-291f2f48a6f8.herokuapp.com/api/cart/add/${id}/`,
 					{},
 					{
 						headers: {
@@ -96,7 +96,7 @@ const ProductCard = (products) => {
 			} else {
 				// Удаление товара из корзины
 				response = await axios.delete(
-					`https://myserverapp-a354f8daf7d4.herokuapp.com/api/cart/remove/${id}/`,
+					`https://backendtasty-291f2f48a6f8.herokuapp.com/api/cart/remove/${id}/`,
 					{
 						headers: {
 							Authorization: `Token ${token}`,

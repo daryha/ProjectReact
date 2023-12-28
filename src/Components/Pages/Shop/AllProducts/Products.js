@@ -1,4 +1,4 @@
-// Products.js
+// Products.jsпродуктов
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import ProductCard from './ProductCard'
@@ -10,7 +10,7 @@ const Products = ({ selectedCategory }) => {
 		const fetchProducts = async () => {
 			try {
 				// Изначально устанавливаем URL для загрузки всех продуктов
-				let url = 'https://myserverapp-a354f8daf7d4.herokuapp.com/api/products/'
+				let url = 'https://backendtasty-291f2f48a6f8.herokuapp.com/api/products/'
 				// Если выбрана категория, модифицируем URL для фильтрации
 				if (selectedCategory) {
 					url += `?category=${selectedCategory}`

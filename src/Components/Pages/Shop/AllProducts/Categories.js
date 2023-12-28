@@ -10,7 +10,7 @@ const Categories = ({ onCategorySelect }) => {
 		const fetchCategories = async () => {
 			try {
 				const response = await axios.get(
-					'https://myserverapp-a354f8daf7d4.herokuapp.com/api/category/'
+					'https://backendtasty-291f2f48a6f8.herokuapp.com/api/category/'
 				)
 				setCategories(response.data)
 			} catch (error) {

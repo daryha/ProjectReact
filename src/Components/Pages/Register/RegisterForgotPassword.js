@@ -23,7 +23,7 @@ const RegisterForgotPassword = () => {
 		}
 
 		axios
-			.post('https://myserverapp-a354f8daf7d4.herokuapp.com/api/accounts/password-reset-request/', {
+			.post('https://backendtasty-291f2f48a6f8.herokuapp.com/api/accounts/password-reset-request/', {
 				email,
 			})
 			.then(response => {
@@ -45,7 +45,7 @@ const RegisterForgotPassword = () => {
 		}
 
 		axios
-			.post('https://myserverapp-a354f8daf7d4.herokuapp.com/api/accounts/reset-password-confirm/', {
+			.post('https://backendtasty-291f2f48a6f8.herokuapp.com/api/accounts/reset-password-confirm/', {
 				code,
 				email,
 				newPassword,
