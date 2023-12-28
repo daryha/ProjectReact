@@ -44,7 +44,7 @@ const Comments = props => {
 
 	return (
 		<>
-			<div className='Coments__container'>
+			<div className='Coments__container' >
 				<div className='Card__wrapper'>
 					<div className={`Card__comment ${isAdded ? 'expanded' : ''}`}>
 						<div className='Card__User__container'>
@@ -66,7 +66,12 @@ const Comments = props => {
 						</p>
 
 						<div className='Like__container'>
-							<img className='LikeImg' src={isLiked ? LikeActive: Like} alt='Like' onClick={handleLike}></img>
+							<img
+								className='LikeImg'
+								src={isLiked ? LikeActive : Like}
+								alt='Like'
+								onClick={handleLike}
+							></img>
 							<p className='User__likes'>{likesCount}</p>
 						</div>
 					</div>

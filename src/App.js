@@ -16,7 +16,8 @@ import Home from './Components/Main/Home';
 import Policy from './Components/Pages/Policy/Policy';
 import MarketPage from './Components/Pages/Shop/ShopSmall/MarketPage'
 import AllShop from './Components/Main/ShopCard/AllShop';
-import CheckoutForm from './Components/Pages/Basket/Basket';
+import CheckoutForm from './Components/Pages/Basket/CheckoutForm'
+import ConfirmOrder from './Components/Pages/Basket/ConfirmOrder';
 
 // Register
 import Register from './Components/Pages/Register/Register';
@@ -58,6 +59,7 @@ function App() {
               <Route path='/forgotpassword' element={<ForgotPassword />} />
               <Route path='/AllShop' element={<Layout><AllShop /></Layout>} />
               <Route path='/CheckoutForm' element={<Layout><CheckoutForm /></Layout>} />
+              <Route path='/ConfirmOrder' element={<ConfirmOrder />} />
             </Routes>
           </Router>
 

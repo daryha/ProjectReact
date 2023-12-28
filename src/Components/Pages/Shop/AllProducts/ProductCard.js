@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import './AllProucts.css'
-import Like from './../../../../Img/OrdersCard/Like.png'
-import ActiveLike from './../../../../Img/OrdersCard/Like__active.png'
 
 
 
 
-const ProductCard = products => {
+
+const ProductCard = (products) => {
+
+
+
+
 	const [notification, setNotification] = useState({
 		show: false,
 		text: '',
 	})
-
-	
 
 	const [isAuthenticated, setIsAuthenticated] = useState(false)
 
@@ -34,60 +35,16 @@ const ProductCard = products => {
 		return likedItems[id] || false
 	})
 
-
-    const fetchUserProfile = async () => {
-			try {
-				const token = localStorage.getItem('token') // Получение токена из localStorage
-				if (!token) {
-					console.error('Токен аутентификации не найден')
-					setIsAuthenticated(false)
-					return
-				}
-				const response = await axios.get(
-					'https://myserverapp-a354f8daf7d4.herokuapp.com/api/user/profile/',
-					{
-						headers: {
-							Authorization: `Token ${token}`,
-						},
-					}
-				)
-
-				setIsAuthenticated(true)
-				console.log(response.data)
-			} catch (error) {
-				console.error('Ошибка доступа к защищенному маршруту', error)
-				setIsAuthenticated(false)
-			}
-		}
-
-		useEffect(() => {
-			fetchUserProfile()
-		}, [])
-
-
-    const showAuthenticationError = () => {
-			showNotification(
-				'Вы должны войти в систему, чтобы выполнить это действие.'
-			)
-		}
-	
- 
-
-const toggleItem = async () => {
-
-	if (!isAuthenticated) {
-		showAuthenticationError()
-		return
-	}
-
-	// Если товар уже добавлен (isAdded === true), возможно, вы захотите удалить его из корзины.
-	// В противном случае, добавьте его в корзину.
-	if (!isAdded) {
+	const fetchUserProfile = async () => {
 		try {
-			const token = localStorage.getItem('token') 
-			const response = await axios.post(
-				`https://myserverapp-a354f8daf7d4.herokuapp.com/cart/add/${id}/`,
-				{},
+			const token = localStorage.getItem('token') // Получение токена из localStorage
+			if (!token) {
+				console.error('Токен аутентификации не найден')
+				setIsAuthenticated(false)
+				return
+			}
+			const response = await axios.get(
+				'http://127.0.0.1:8000/api/user/profile/',
 				{
 					headers: {
 						Authorization: `Token ${token}`,
@@ -95,31 +52,77 @@ const toggleItem = async () => {
 				}
 			)
 
-			if (response.status === 200) {
-				showNotification(`${products.name} добавлен в корзину!`)
-				setIsAdded(true) // Обновляем состояние только после успешного запроса
-			} else {
-				// Возможно, здесь вам стоит показать сообщение об ошибке из response.data
-				console.error('Ошибка при добавлении товара в корзину')
-			}
+			setIsAuthenticated(true)
+			console.log(response.data)
 		} catch (error) {
-			console.error('Ошибка при отправке запроса:', error)
-			showNotification('Произошла ошибка при добавлении товара в корзину.')
+			console.error('Ошибка доступа к защищенному маршруту', error)
+			setIsAuthenticated(false)
 		}
-	} else {
-		// Логика для удаления товара из корзины, если isAdded === true
-		showNotification(`${products.name} удален из корзины!`)
-		setIsAdded(false)
 	}
-}
 
-	const toggleLike = () => {
+	useEffect(() => {
+		fetchUserProfile()
+	}, [])
 
+	const showAuthenticationError = () => {
+		showNotification('Вы должны войти в систему, чтобы выполнить это действие.')
+	}
+
+	const handleToggleCartItem = async () => {
 		if (!isAuthenticated) {
 			showAuthenticationError()
 			return
-		}else
+		}
 
+		try {
+			const token = localStorage.getItem('token')
+			if (!token) {
+				showNotification('Вы не авторизованы')
+				return
+			}
+
+			let response
+			if (!isAdded) {
+				// Добавление товара в корзину
+				response = await axios.post(
+					`http://127.0.0.1:8000/api/cart/add/${id}/`,
+					{},
+					{
+						headers: {
+							Authorization: `Token ${token}`,
+						},
+					}
+				)
+			} else {
+				// Удаление товара из корзины
+				response = await axios.delete(
+					`http://127.0.0.1:8000/api/cart/remove/${id}/`,
+					{
+						headers: {
+							Authorization: `Token ${token}`,
+						},
+					}
+				)
+			}
+
+			if (response.status === 200 || response.status === 204) {
+				const action = isAdded ? 'удален из' : 'добавлен в'
+				showNotification(`${products.name} ${action} корзину!`)
+				setIsAdded(!isAdded) // Обновляем состояние на противоположное
+			} else {
+				console.error('Ошибка при изменении корзины')
+			}
+		} catch (error) {
+			console.error('Ошибка при отправке запроса:', error)
+			showNotification('Произошла ошибка при изменении корзины.')
+		}
+	}
+
+	const toggleLike = () => {
+		if (!isAuthenticated) {
+			showAuthenticationError()
+			return
+		} else
 			setIsLiked(current => {
 				const newState = !current
 				showNotification(
@@ -138,13 +141,7 @@ const toggleItem = async () => {
 		<>
 			<div className='Product Oreder__card'>
 				<div className='content__Wrapper'>
-					<div className='Like__container' onClick={toggleLike}>
-						<img
-							className='ImgLike'
-							src={isLiked ? ActiveLike : Like}
-							alt='Like'
-						/>
-					</div>
+
 
 					<div className='Img__Container'>
 						<img
@@ -165,7 +162,7 @@ const toggleItem = async () => {
 						<p className='price__item'>{products.price} ₸</p>
 						<div
 							className={`container__plus ${isAdded ? 'checked' : ''}`}
-							onClick={toggleItem}
+							onClick={handleToggleCartItem}
 						></div>
 					</div>
 				</div>
@@ -174,8 +171,6 @@ const toggleItem = async () => {
 			<div className={`notification ${notification.show ? 'show' : ''}`}>
 				{notification.text}
 			</div>
-
-
 		</>
 	)
 }

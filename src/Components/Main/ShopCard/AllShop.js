@@ -2,7 +2,7 @@ import './ShopCardContainer.css'
 import ShopCard from './ShopCard'
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+
 
 const AllShop = () => {
 	const [shops, setShops] = useState([])
@@ -10,7 +10,7 @@ const AllShop = () => {
 	useEffect(() => {
 		const fetchShops = async () => {
 			try {
-				const response = await axios.get('https://myserverapp-a354f8daf7d4.herokuapp.com/api/stores/')
+				const response = await axios.get('http://127.0.0.1:8000/api/stores/')
 				setShops(response.data)
 			} catch (error) {
 				console.error('Ошибка при получении данных о магазина:', error)

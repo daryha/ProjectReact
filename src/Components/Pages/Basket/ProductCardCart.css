@@ -1,0 +1,144 @@
+.product-card {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+.product-image img {
+  border-radius: 5px;
+  width: 100px;
+}
+
+.product-info {
+
+  display: flex;
+  align-items: center;
+  gap: 50px;
+
+}
+
+.product-name {
+  font-size: 16px;
+  margin: 0;
+}
+
+.product-quantity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  
+}
+
+.product-quantity button {
+  border: none;
+  background: #323142;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  
+}
+
+
+
+
+.product-quantity button:hover {
+  border: none;
+  background: #53535d;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  
+  
+}
+
+
+.product-quantity span {
+  font-size: 14px;
+}
+
+.product-pricing {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  position: absolute;
+  right:100px;
+  
+}
+
+.product-price,
+.product-total-price {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.product-remove-btn{
+  width: 30px;
+  height:30px;
+  background: #323142;
+  border-radius: 100%;
+  position: absolute;
+  right: 10px;
+  top: 60px;
+}
+
+.product-remove-btn:hover{
+  cursor: pointer;
+
+}
+
+
+
+.product-card {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  position: relative; 
+}
+
+
+
+.product-remove-btn {
+  width: 30px;
+  height: 30px;
+  background: #323142;
+  border-radius: 50%; 
+  position: absolute;
+  right: 10px; 
+  top: 10px; 
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+
+.product-remove-btn:hover {
+  cursor: pointer;
+}
+
+
+.product-name{
+  position: absolute;
+  left: 120px;
+}
+
+
+.product-image{
+  margin-right: 100px;
+}
+
+.shtucak{
+  position: absolute;
+  left: 238px;
+}
+
+.corss{
+  padding: 8px;
+}

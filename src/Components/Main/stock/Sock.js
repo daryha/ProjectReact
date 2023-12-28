@@ -5,7 +5,9 @@ const Stock = () => {
     return (
 			<>
 				<div className='Stock__container'>
-					<h1 className='title'>Акции</h1>
+					<h1 className='title' id='TopOrder2'>
+						Акции
+					</h1>
 
 					<div className='Stock__card'>
 						<p className='Card__Desc'>

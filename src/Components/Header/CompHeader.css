@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 
 .Header__container{
     width: 1248px;
@@ -60,6 +64,7 @@
     text-decoration: none;
     color: #606060;
     position: relative;
+    text-decoration: no;
     
 
 }

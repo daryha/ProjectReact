@@ -23,7 +23,7 @@ const RegisterForgotPassword = () => {
 		}
 
 		axios
-			.post('https://myserverapp-a354f8daf7d4.herokuapp.com/api/accounts/password-reset-request/', {
+			.post('http://127.0.0.1:8000/api/accounts/password-reset-request/', {
 				email,
 			})
 			.then(response => {
@@ -45,7 +45,7 @@ const RegisterForgotPassword = () => {
 		}
 
 		axios
-			.post('https://myserverapp-a354f8daf7d4.herokuapp.com/api/accounts/reset-password-confirm/', {
+			.post('http://127.0.0.1:8000/api/accounts/reset-password-confirm/', {
 				code,
 				email,
 				newPassword,

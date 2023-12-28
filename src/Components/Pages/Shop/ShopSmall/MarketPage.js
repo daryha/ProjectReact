@@ -10,8 +10,6 @@ import './../AllProducts/AllProucts.css' // Путь к CSS файлу ваше�
 const MarketPage = () => {
 	const { slug } = useParams()
 	const [sortOrder, setSortOrder] = useState('');
-
-
 	const [shopDetails, setShopDetails] = useState(null)
 	const [categories, setCategories] = useState([])
 	const [products, setProducts] = useState([])
@@ -54,18 +52,18 @@ const MarketPage = () => {
 		const fetchShopDetails = async () => {
 			try {
 				const storeResponse = await axios.get(
-					`https://myserverapp-a354f8daf7d4.herokuapp.com/api/stores/${slug}/`
+					`http://127.0.0.1:8000/api/stores/${slug}/`
 				)
 				if (storeResponse.data) {
 					setShopDetails(storeResponse.data)
 
 					const categoriesResponse = await axios.get(
-						`https://myserverapp-a354f8daf7d4.herokuapp.com/api/category/?store_slug=${slug}`
+						`http://127.0.0.1:8000/api/category/?store_slug=${slug}`
 					)
 					setCategories(categoriesResponse.data)
 
 					const productsResponse = await axios.get(
-						`https://myserverapp-a354f8daf7d4.herokuapp.com/api/products/?store_slug=${slug}`
+						`http://127.0.0.1:8000/api/products/?store_slug=${slug}`
 					)
 					setProducts(productsResponse.data)
 				}
