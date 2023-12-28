@@ -10,7 +10,9 @@ const AllShop = () => {
 	useEffect(() => {
 		const fetchShops = async () => {
 			try {
-				const response = await axios.get('http://127.0.0.1:8000/api/stores/')
+				const response = await axios.get(
+					'https://myserverapp-a354f8daf7d4.herokuapp.com/api/stores/'
+				)
 				setShops(response.data)
 			} catch (error) {
 				console.error('Ошибка при получении данных о магазина:', error)

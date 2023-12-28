@@ -19,11 +19,14 @@ const CheckoutForm = () => {
 	const fetchCartItems = async () => {
 		const token = localStorage.getItem('token')
 		try {
-			const response = await axios.get('http://127.0.0.1:8000/api/cart/', {
-				headers: {
-					Authorization: `Token ${token}`,
-				},
-			})
+			const response = await axios.get(
+				'https://myserverapp-a354f8daf7d4.herokuapp.com/api/cart/',
+				{
+					headers: {
+						Authorization: `Token ${token}`,
+					},
+				}
+			)
 			setCartItems(response.data.items)
 		} catch (error) {
 			console.error('Ошибка при получении данных корзины:', error)
@@ -35,7 +38,7 @@ const CheckoutForm = () => {
 		const token = localStorage.getItem('token')
 		try {
 			const response = await axios.delete(
-				`http://127.0.0.1:8000/api/cart/remove/${cartItemId}/`,
+				`https://myserverapp-a354f8daf7d4.herokuapp.com/api/cart/remove/${cartItemId}/`,
 				{
 					headers: {
 						Authorization: `Token ${token}`,
@@ -56,7 +59,7 @@ const CheckoutForm = () => {
 		const token = localStorage.getItem('token')
 		try {
 			await axios.delete(
-				`http://127.0.0.1:8000/api/cart/remove/${cartItemId}/`,
+				`https://myserverapp-a354f8daf7d4.herokuapp.com/api/cart/remove/${cartItemId}/`,
 				{
 					headers: {
 						Authorization: `Token ${token}`,
@@ -120,7 +123,7 @@ const CheckoutForm = () => {
 		const token = localStorage.getItem('token')
 		try {
 			const response = await axios.post(
-				'http://127.0.0.1:8000/api/create-order/',
+				'https://myserverapp-a354f8daf7d4.herokuapp.com/api/create-order/',
 				JSON.stringify(orderData), // Сериализуем объект данных в строку JSON
 				{
 					headers: {

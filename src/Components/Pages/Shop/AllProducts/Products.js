@@ -10,7 +10,7 @@ const Products = ({ selectedCategory }) => {
 		const fetchProducts = async () => {
 			try {
 				// Изначально устанавливаем URL для загрузки всех продуктов
-				let url = 'http://127.0.0.1:8000/api/products/'
+				let url = 'https://myserverapp-a354f8daf7d4.herokuapp.com/api/products/'
 				// Если выбрана категория, модифицируем URL для фильтрации
 				if (selectedCategory) {
 					url += `?category=${selectedCategory}`

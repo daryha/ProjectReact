@@ -44,7 +44,7 @@ const ProductCard = (products) => {
 				return
 			}
 			const response = await axios.get(
-				'http://127.0.0.1:8000/api/user/profile/',
+				'https://myserverapp-a354f8daf7d4.herokuapp.com/api/user/profile/',
 				{
 					headers: {
 						Authorization: `Token ${token}`,
@@ -85,7 +85,7 @@ const ProductCard = (products) => {
 			if (!isAdded) {
 				// Добавление товара в корзину
 				response = await axios.post(
-					`http://127.0.0.1:8000/api/cart/add/${id}/`,
+					`https://myserverapp-a354f8daf7d4.herokuapp.com/api/cart/add/${id}/`,
 					{},
 					{
 						headers: {
@@ -96,7 +96,7 @@ const ProductCard = (products) => {
 			} else {
 				// Удаление товара из корзины
 				response = await axios.delete(
-					`http://127.0.0.1:8000/api/cart/remove/${id}/`,
+					`https://myserverapp-a354f8daf7d4.herokuapp.com/api/cart/remove/${id}/`,
 					{
 						headers: {
 							Authorization: `Token ${token}`,

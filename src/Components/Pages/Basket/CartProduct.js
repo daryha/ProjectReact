@@ -30,7 +30,7 @@ const CartProduct = ({ product, onRemove, onQuantityChange }) => {
 			<div className='product-card'>
 				<div className='product-image'>
 					<img
-						src={`http://localhost:8000${product.image}`}
+						src={`https://myserverapp-a354f8daf7d4.herokuapp.com${product.image}`}
 						alt={product.name}
 					/>
 				</div>
