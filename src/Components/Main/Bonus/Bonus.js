@@ -27,7 +27,7 @@ const Bonus = () => {
 		event.preventDefault()
 		try {
 			const response = await fetch(
-				'https://myserverapp-a354f8daf7d4.herokuapp.com/email_app/send_email/',
+				'https://backendtasty-291f2f48a6f8.herokuapp.com/email_app/send_email/',
 				{
 					method: 'POST',
 					headers: {
